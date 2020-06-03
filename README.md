@@ -1,2 +1,2 @@
-# RestaurantWebApp2
-Modified version
+# RestaurantWebPage
+First Angular Application

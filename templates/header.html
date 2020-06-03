@@ -1,0 +1,134 @@
+<header>
+    <nav id="header-nav" class="navbar navbar-expand-md navbar-light" style="background-color: #ab48b3; opacity: 0.9">
+        <a href="index.html" class="navbar-brand"><img src="download.png" style="height: 40px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav justify-content- mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" ui-sref="home.main">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="modal" data-target="#SignInModal" href="#">ORDER NOW</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" ui-sref="home.menu">MENU</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" ui-sref="home.aboutUs" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  ABOUT US
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Our Story</a>
+                  <a class="dropdown-item" href="#">Locate Us</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Give Feedback</a>
+                </div>
+              </li>
+              
+            </ul>
+        </div>
+        <span class="my-2 my-lg-0">
+            <button class="btn btn-outline my-2 my-sm-0" type="button" data-toggle="modal" data-target="#SignInModal" id="SignIn" style="background-color: #ec6621;">Log In</button>
+            <button class="btn btn-outline my-2 my-sm-0" data-toggle="modal" data-target="#SignUpModal" id="SignUp" style="background-color: #ec6621" type="button">Register</button>
+        </span>
+
+         <!-- Modal  Sign In -->
+            <div class="modal fade" id="SignInModal" role="dialog">
+              <div class="modal-dialog">
+              
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header" style="padding:35px 50px;">
+                    <h4 > Login</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    
+                  </div>
+                  <div class="modal-body" style="padding:40px 50px;">
+                    <form role="form">
+                      <div class="form-group">
+                        <label for="usrname">Username</label>
+                        <input type="text" class="form-control" id="usrname" placeholder="Enter username or email">
+                      </div>
+                      <div class="form-group">
+                        <label for="psw"></span> Password</label>
+                        <input type="text" class="form-control" id="pswd" placeholder="Enter password">
+                      </div>
+                      <div class="checkbox">
+                        <label><input type="checkbox" value="" checked>Remember me</label>
+                      </div>
+                        <a href="dashboard.html"><button type="button" class="btn btn-success btn-block"> Login</button></a>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"> Cancel</button>
+                    <p>Not a member? <a href="#" data-toggle="modal" data-target="#SignUpModal">Register</a></p>
+                    <p>Forgot <a href="#">Password?</a></p>
+                  </div>
+                </div>
+                
+              </div>
+            </div>  <!-- Sign In Modal ends -->
+
+            <!-- Modal  Sign Up -->
+            <div class="modal fade" id="SignUpModal" role="dialog">
+              <div class="modal-dialog">
+              
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header" style="padding:35px 50px;">
+                    <h4 >Register</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <div class="modal-body" style="padding:40px 50px;">
+                    <form role="form" name="regForm">
+                      <div class="form-group">
+                        <label for="name"> Full Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter full name">
+                      </div>
+                      <div class="form-group">
+                        <label for="Mno"> Contact Number</label>
+                        <input type="text" class="form-control" id="Mno" placeholder="Enter full name">
+                      </div>
+                      <div class="form-group">
+                        <label for="email"> Email</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
+                      </div>
+                      <div class="form-group">
+                        <label for="adrs"> Location</label>
+                        <input type="text" class="form-control" id="adrs" placeholder="Enter address">
+                      </div>
+                      <div class="form-group">
+                        <label for="psw">  Create Password</label>
+                        <input type="text" class="form-control" id="psw" placeholder="Enter password">
+                      </div>
+                      <div class="form-group">
+                        <label for="Conpsw">  Confirm Password</label>
+                        <input type="text" class="form-control" id="Conpsw" placeholder="Enter password again">
+                      </div>
+                      <div class="checkbox">
+                        <label><input type="checkbox" value="" checked>Remember me</label>
+                      </div>
+                        <a href="dashboard.html"><button type="button"  class="btn btn-success btn-block"> Register</button></a>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"> Cancel</button>
+                  </div>
+                </div>
+                
+              </div>
+            </div>  <!-- Sign Up Modal ends -->
+    </nav>
+    <div id="main-content" class="container">
+  <div class="box">
+    <h1 class="display-1">EAT DRINK VISIT</h1>
+  </div>
+
+</div>
+</header>
+
+
+<ui-view></ui-view>
