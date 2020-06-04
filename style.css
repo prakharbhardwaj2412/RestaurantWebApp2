@@ -11,18 +11,65 @@ header {
 
 /* HOME PAGE */
 
+.nav-link {
+  /*color: black;*/
+  margin-right: 5px;
+  letter-spacing: 1px;
+  font-weight: 600;
+
+}
+.nav-link:hover {
+  /*background-color: white;*/
+  border: 1px solid white;
+
+}
+
+.active-tab {
+  background-color: #fff;
+}
+
+#SignIn, #SignUp {
+  background-color: #ec6621;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+#SignIn:hover, #SignUp:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.modal {
+  font-family: 'Lato', sans-serif;
+    color: var(--color-black) !important;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: var(--color-white);
+    z-index: -1;
+    background-image: linear-gradient(-135deg, var(--color-primary-1), var(--color-primary-2));
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    font-weight: 400;
+}
+
 
 
 #menu-tile, #story-tile, #map-tile {
-  height: 250px;
+  height: 300px;
   width: 100%;
   margin-bottom: 15px;
   position: relative;
   /*border: 2px solid #3F0C1F;*/
   overflow: hidden;
+  transition: all 0.2s;
 }
 #menu-tile:hover, #story-tile:hover, #map-tile:hover {
-  box-shadow: 0 1px 5px 1px black;
+  box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.6);
+  transform: translateY(-18px);
+  /*width: 103%;*/
+  /*height: 350px;*/
 }
 #menu-tile {
   background: url('images/menu-tile.jpg') no-repeat;
@@ -78,7 +125,7 @@ header {
     color:white !important;
     text-align: center;
     font-size: 30px;
-}
+  }
 .modal-footer {
     background-color: #f9f9f9;
 }
