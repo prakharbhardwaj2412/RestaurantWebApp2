@@ -40,21 +40,52 @@ header {
 }
 
 .modal {
-  font-family: 'Lato', sans-serif;
-    color: var(--color-black) !important;
+  /*font-family: 'Lato', sans-serif;*/
+    /*color: var(--color-black) !important;*/
     font-size: 1.6rem;
-    line-height: 1.6;
-    color: var(--color-white);
-    z-index: -1;
-    background-image: linear-gradient(-135deg, var(--color-primary-1), var(--color-primary-2));
-    height: 100vh;
-    background-repeat: no-repeat;
+    background-image: linear-gradient(135deg, #e2325a, #e63c44, #e83251, #ce2f63, #e2325a);
+    /*background-repeat: no-repeat;*/
     background-size: cover;
     position: relative;
     font-weight: 400;
 }
-
-
+.modal-dialog {
+    position: absolute;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, .6);
+}
+.modal-header, #LoginText, .close {
+    background-color: #ab48b3;
+    color:white !important;
+    text-align: center;
+    font-weight: 900;
+    /*font-size: 40px;*/
+  }
+.modal-footer {
+    background-color: #f9f9f9;
+}
+.inputField {
+    border-bottom: 2px solid #ab48b3;
+    box-shadow: none !important;
+    /*transition: all 2s;*/
+    margin-bottom: .4rem;
+}
+.inputField:focus {
+  transform: translateY(-6px) scaleX(1.10);
+    border: 2px solid #7a4690 !important;
+    transition: all 0.4s;
+}
+#BtnLogin, #BtnRegister {
+  background-color: #ab48b3;
+  opacity: 0.8;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+#BtnLogin:hover, #BtnRegister:hover {
+  background-color: green;
+  transform: translateY(-4px) scaleX(1.10) ;
+  transition: all 0.4s;
+}
 
 #menu-tile, #story-tile, #map-tile {
   height: 300px;
@@ -63,14 +94,14 @@ header {
   position: relative;
   /*border: 2px solid #3F0C1F;*/
   overflow: hidden;
-  transition: all 0.2s;
+  transition: all 0.4s;
 }
 #menu-tile:hover, #story-tile:hover, #map-tile:hover {
   box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.6);
-  transform: translateY(-18px);
-  /*width: 103%;*/
-  /*height: 350px;*/
-}
+  transform: translateY(-13px);
+  transition: all 0.2s;
+
+  }
 #menu-tile {
   background: url('images/menu-tile.jpg') no-repeat;
   background-position: center;
@@ -116,19 +147,9 @@ header {
   margin-bottom: 20px;
 }
 
-.activeTab {
-  color: red;
-  font-weight: bold;
-}
-.modal-header, h4, .close {
-    background-color: #ab48b3;
-    color:white !important;
-    text-align: center;
-    font-size: 30px;
-  }
-.modal-footer {
-    background-color: #f9f9f9;
-}
+
+
+
 
 /* MENU PAGE */
 .category-tile { 
