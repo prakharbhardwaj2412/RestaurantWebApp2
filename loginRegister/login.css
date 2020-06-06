@@ -52,7 +52,7 @@ body {
 .input-form {
 	display: flex;
 	flex-direction: column-reverse;
-	margin: 1.2em 0;
+	margin: 1.2em 0 0 0;
 }
 input, label {
 	transition: 0.4s ease;
@@ -68,7 +68,17 @@ label {
 	position: absolute;
 	letter-spacing: 1px;
 }
-
+/*#eye-btn {
+	transform-origin: right;
+	padding-left: 10px;
+	transform: translate(4px, -14px) scale(1.2);
+	margin-bottom: 2px;
+	cursor: text;
+	color: #757575;
+	position: absolute;
+	float: right;
+}
+*/
 input:focus, input:not(:placeholder-shown) {
 	border: none;
 	/*text-decoration: none;*/
@@ -97,3 +107,16 @@ input::placeholder {
 	opacity: 0;
 }
 
+.ng-touched.ng-valid {
+  border-bottom: 2px green solid;
+}
+
+.ng-touched.ng-invalid {
+  border-bottom: 2px red solid;
+}
+
+span {
+	font-size: 14px;
+	margin-top: 0;
+	color: #757575;
+}

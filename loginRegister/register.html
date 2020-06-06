@@ -18,59 +18,79 @@
   	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 </head>
-<body>
+<body ng-app="RegisterFormApp">
 	<div class="container">
 		<div class="row">
 			<div class=" col-md-1 col-lg-2"></div>
 			<div class="col-sm-12 col-md-10 col-lg-8">
-				<div class="box">
+				<div class="box" ng-controller="RegisterController as reg">
 					<div class="h">Register</div>
 					<div class=" formDiv">
 
-						<form>
+						<form name="RegForm" novalidate>
 						  <div class="form-group input-group-lg">
-						    <label for="NwUsr">Name</label>
-						    <input type="text"  class="form-control inputF" placeholder="Enter Full Name" id="NwUsr">
+						    <label for="NwUsr">UserName</label>
+						    <input type="text"  class="form-control inputF" placeholder="Choose UserName" name="NwUsr" id="NwUsr"
+						    ng-model="reg.NwUsr"
+					        required
+					        minlength="4"
+					        ng-maxlength="10">
+					        <span
+					            ng-if="(RegForm.NwUsr.$error.minlength || RegForm.NwUsr.$error.required) && RegForm.NwUsr.$touched">
+					            Username must be at least 4 characters long
+					        </span>
+					        <span ng-if="RegForm.NwUsr.$error.maxlength && RegForm.NwUsr.$touched">
+					            Username must not be longer than 10 characters
+					        </span>
 						  </div>
 						  <div class="form-group input-group-lg">
 						    <label for="Email">Email</label>
-						    <input type="email"  class="form-control inputF" placeholder="Enter Email" id="Email">
+						    <input type="email"  class="form-control inputF" placeholder="Enter Email" name="Email" id="Email"
+						    ng-model="reg.Email"
+						    required>
+						    <span ng-if="RegForm.Email.$invalid && RegForm.Email.$touched">Must be a valid email address: handle@domain format</span>
+						  </div>
+						  <div class="form-group input-group-lg">
+						    <label for="Phone">Contact Number</label>
+						    <input type="text"  class="form-control inputF" placeholder="Enter Phone Number" name="Phone" id="Phone"
+						    ng-model="reg.Phone"
+						    required 
+				            pattern="(\d{3})-(\d{3})-(\d{4})">
+				            <span ng-if="RegForm.Phone.$invalid && RegForm.Phone.$touched">Phone must be in the format ###-###-####</span>
 						  </div>
 						  <div class="form-group input-group-lg">
 						     <label for="NwPass">Create Password</label>
-						    <input type="password" placeholder="Enter Password" class="form-control inputF" id="NwPass">
+						    <input type="password" placeholder="Enter Password" class="form-control inputF" id="NwPass" name="NwPass"
+						    ng-model="reg.NwPass"
+						    required
+						    minlength="5"
+						    maxlength="10">
+						    <span ng-if="(RegForm.NwPass.$error.minlength || RegForm.NwPass.$error.required) && RegForm.NwPass.$touched">Password must be at least 5 characters long</span>
+						    <span ng-if="(RegForm.NwPass.$error.maxlength) && RegForm.NwPass.$touched">Password must not be longer than 10 characters</span>
 						  </div>
 						  <div class="form-group input-group-lg">
 						     <label for="AgnPass">Confirm Password</label>
-						    <input type="password" placeholder="Enter Password Again" class="form-control inputF" id="AgnPass">
+						    <input type="password" placeholder="Enter Password Again" class="form-control inputF" name="AgnPass" id="AgnPass"
+						    ng-model="reg.AgnPass"
+						    required
+						    minlength="5"
+						    maxlength="10">
+						    <span ng-if="((reg.NwPass != reg.AgnPass) || RegForm.AgnPass.$error.required || RegForm.AgnPass.$error.minlength || RegForm.AgnPass.$error.maxlength) && RegForm.AgnPass.$touched">Password Missmatch</span>
 						  </div>
 
-						  <div class="d-flex justify-content-center"><button type="submit" class="btn btn-lg BtnRegister">Register</button>
+						  <div class="d-flex justify-content-center"><a href="../dashboard.html"><button class="btn btn-lg BtnRegister"
+						  	ng-disabled="RegForm.$invalid"
+					         ng-click="RegForm.$valid">Register</button></a></div>
 						</form></div>
-					<!-- <form>
-						<div class="input-form">
-							<input type="text" name="UsrName" id="UsrName" placeholder="Enter Full Name">
-							<label for="UsrName">Full Name</label>
-						</div>
-						<div class="input-form">
-							<input type="email" name="Email" id="Email" placeholder="Enter Email">
-							<label for="Email">Email</label>
-						</div>
-						<div class="input-form">
-							<input type="password" name="NwPass" id="NwPass" placeholder="Create password">
-							<label for="NwPass">Create Password</label>
-						</div>
-						<div class="input-form">
-							<input type="password" name="AgnPass" id="AgnPass" placeholder="Confirm Password">
-							<label for="AgnPass">Confirm Paasword</label>
-						</div>
-					</form> -->
 					</div>
 				</div>
 			</div>
 			<div class=" col-md-1 col-lg-2"></div>
 		</div>
 	</div>
+
+	<script src="../lib/angular.min.js"></script>
+    <script src="validate.js"></script>
 
 </body>
 </html>

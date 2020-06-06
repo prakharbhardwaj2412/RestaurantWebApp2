@@ -41,12 +41,17 @@
 
 	RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 	function RoutesConfig ($stateProvider, $urlRouterProvider) {
-		$urlRouterProvider.otherwise('/dashboard/user');
+		$urlRouterProvider.otherwise('/profile');
 
 		$stateProvider.state('dashboard', {
 			url: '/dashboard',
 			templateUrl: 'templates/nav.html'
-		})
+		});
+
+		$stateProvider.state('profile', {
+			url: '/profile',
+			templateUrl: 'templates/nav.html'
+		});
 
 		$stateProvider.state('dashboard.menu', {
 			url: '/menu',

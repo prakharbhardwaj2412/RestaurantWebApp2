@@ -65,3 +65,17 @@ label {
 	/*background-color: yellow;*/
 	background-image: linear-gradient(-45deg, #5956ce, #b251c4);
 }
+
+.ng-touched.ng-valid {
+  border-bottom: 2px green solid;
+}
+
+.ng-touched.ng-invalid {
+  border-bottom: 2px red solid;
+}
+
+span {
+	font-size: 14px;
+	margin-top: 0;
+	color: #757575;
+}

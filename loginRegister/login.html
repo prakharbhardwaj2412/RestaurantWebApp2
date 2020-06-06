@@ -19,31 +19,50 @@
 
 	
 </head>
-<body>
+<body ng-app="SigninFormApp">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-1 col-sm-1 col-md-2 col-lg-3 col-xl-3"></div>
 			<div class="col-xs-10 col-sm-10 col-md-8 col-lg-6 col-xl-6">
-				<div class="box">
+				<div class="box" ng-controller="SigninController as sic">
 					<div class="h">Sign In</div>
 					<div class="container formDiv">
-						<form>
+						<form name="SigninForm" novalidate>
 							<div class="input-form">
-								<input type="email" name="UsrName" id="UsrName" placeholder="Enter UserName">
+								<input type="text" name="UsrName" id="UsrName" placeholder="Enter UserName"
+								ng-model="sic.UsrName"
+								required>
 								<label for="UsrName">Username</label>
 							</div>
+							<span
+						            ng-if=" SigninForm.UsrName.$error.required && SigninForm.UsrName.$touched">
+						            Username required
+					        </span>
 							<div class="input-form">
-								<input type="password" name="Pass" id="Pass" placeholder="password">
+								<input type="password" name="Pass" id="Pass" placeholder="password"
+								ng-model="sic.Pass"
+								required>
 								<label for="Pass">Password</label>
+								<!-- <button id="eye-btn" class="fa fa-eye"
+								style="background-color: #fff; border: none;"></button> -->
 							</div>
+							<span 
+							    ng-if="SigninForm.Pass.$error.required && SigninForm.Pass.$touched">
+								Password required
+							</span>
 						</form>
-						<button class="btn btn-lg btn-block BtnSignIn">Sign In</button>
+						<a href="../dashboard.html"><button class="btn btn-lg btn-block BtnSignIn"
+						ng-disabled="SigninForm.$invalid"
+						ng-click="SigninForm.$submitted">Sign In</button></a>
 					</div>
 				</div>
 				<div class="col-xs-1 col-sm-1 col-md-2 col-lg-3 col-xl-3"></div>
 			</div>
 		</div>
 	</div>
+
+	<script src="../lib/angular.min.js"></script>
+    <script src="validate.js"></script>
 
 </body>
 </html>
