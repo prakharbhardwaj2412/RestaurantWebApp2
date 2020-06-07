@@ -43,33 +43,28 @@
 	function RoutesConfig ($stateProvider, $urlRouterProvider) {
 		$urlRouterProvider.otherwise('/profile');
 
-		$stateProvider.state('dashboard', {
-			url: '/dashboard',
-			templateUrl: 'templates/nav.html'
-		});
+		// $stateProvider.state('dashboard', {
+		// 	url: '/dashboard',
+		// 	templateUrl: 'templates/nav.html'
+		// });
 
 		$stateProvider.state('profile', {
 			url: '/profile',
-			templateUrl: 'templates/nav.html'
+			templateUrl: 'templates/profile.html'
 		});
 
-		$stateProvider.state('dashboard.menu', {
-			url: '/menu',
-			templateUrl: 'templates/menu.html'
+		$stateProvider.state('json', {
+			url: '/json',
+			templateUrl: 'templates/json.html',
+			// ng.controller: 'MainController'
 		});
 
-		$stateProvider.state('dashboard.user', {
-			url: '/user',
-			templateUrl: 'templates/user.html'
-		});
+		// $stateProvider.state('dashboard.user', {
+		// 	url: '/user',
+		// 	templateUrl: 'templates/user.html'
+		// });
 
 	}
-
-
-
-
-
-
 
 
 

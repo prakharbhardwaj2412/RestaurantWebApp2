@@ -9,7 +9,7 @@
   overflow-x: hidden; 
   padding-top: 60px; 
   transition: 0.5s; 
-  opacity: 0.8;
+  opacity: 0.9;
   /*background-color: #ab48b3;*/
   background-image: linear-gradient(-45deg, #5956ce, #b251c4);
 }
@@ -20,9 +20,9 @@
   /*padding: 8px 8px 8px 32px;*/
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  /*color: #818181;*/
   /*color: #fff;*/
-  color: darkblue;
+  color: blue;
   display: block;
   transition: 0.3s;
   padding: 8px;
@@ -88,15 +88,16 @@
   font-size: 3em;
 }
 
-#BtnOrder {
+#BtnOrder, #BtnJson {
   background-image: linear-gradient(-45deg, #5956ce, #b251c4);
   /*float: center;*/
   letter-spacing: 1px;
   border: none;
   margin-top: 1.4em;
+  color: #fff;
 }
 
-#BtnOrder:hover {
+#BtnOrder:hover, #BtnJson:hover {
   background-image: linear-gradient(45deg, #5956ce, #b251c4);
   transform: translateY(-2px) scaleX(1.04);
   transition: all 0.3s ease;
@@ -105,4 +106,11 @@
 #h1 {
   color: #fff;
   font-size: 2em;
+}
+
+
+.active-tab {
+  color: white;
+  transform: translateY(-1px) scaleX(1.1);
+  font-weight: bolder;
 }

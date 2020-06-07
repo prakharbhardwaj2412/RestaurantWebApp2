@@ -1,0 +1,44 @@
+
+
+
+<div ng-controller="MainController">
+
+
+<center><button class="btn btn-lg" id="BtnJson">Request Json</button></center>
+
+
+
+
+
+<div id="demo">{{md}}</div>
+
+
+</div>
+
+
+<script type="text/javascript">
+
+	(function () {
+		console.log(1);
+		angular.module('UserApp')
+		.controller('MainController', MainController);
+
+		console.log(2);
+
+		MainController.$inject = ['$http'];
+
+		console.log(3);
+
+
+		function MainController ($http) {
+			console.log(4);
+			// $http.get("https://reqres.in/api/users?page=2")
+			// .then(function(response) {
+			// 	$scope.md= response.data;
+			// 	console.log($scope);
+			// });
+		}
+	})();
+	
+
+</script>
