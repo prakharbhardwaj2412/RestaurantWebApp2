@@ -19,6 +19,8 @@
 
 	
 </head>
+
+
 <body ng-app="SigninFormApp">
 	<div class="container">
 		<div class="row">
@@ -30,7 +32,7 @@
 						<form name="SigninForm" novalidate>
 							<div class="input-form">
 								<input type="text" name="UsrName" id="UsrName" placeholder="Enter UserName"
-								ng-model="sic.UsrName"
+								ng-model="UsrName"
 								required>
 								<label for="UsrName">Username</label>
 							</div>
@@ -40,7 +42,7 @@
 					        </span>
 							<div class="input-form">
 								<input type="password" name="Pass" id="Pass" placeholder="password"
-								ng-model="sic.Pass"
+								ng-model="Pass"
 								required>
 								<label for="Pass">Password</label>
 								<!-- <button id="eye-btn" class="fa fa-eye"
@@ -51,9 +53,9 @@
 								Password required
 							</span>
 						</form>
-						<a href="../dashboard.html"><button class="btn btn-lg btn-block BtnSignIn"
+						<button class="btn btn-lg btn-block BtnSignIn"
 						ng-disabled="SigninForm.$invalid"
-						ng-click="SigninForm.$submitted">Sign In</button></a>
+						ng-click="onSubmit()">Sign In</button>
 					</div>
 				</div>
 				<div class="col-xs-1 col-sm-1 col-md-2 col-lg-3 col-xl-3"></div>
@@ -63,6 +65,12 @@
 
 	<script src="../lib/angular.min.js"></script>
     <script src="validate.js"></script>
+
+    <script type="text/javascript">
+
+		alert("username: eve.holt@reqres.in | password: cityslicka");
+</script>
+
 
 </body>
 </html>

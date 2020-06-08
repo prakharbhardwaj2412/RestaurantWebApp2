@@ -56,7 +56,7 @@
 		$stateProvider.state('json', {
 			url: '/json',
 			templateUrl: 'templates/json.html',
-			// ng.controller: 'MainController'
+			// controller: 'MainController'
 		});
 
 		// $stateProvider.state('dashboard.user', {
